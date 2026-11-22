@@ -1,0 +1,58 @@
+{
+  "source_records": 21443,
+  "EXIF_orientation_counts": {
+    "0": 110,
+    "1": 10870,
+    "2": 1,
+    "3": 154,
+    "4": 3,
+    "5": 8,
+    "6": 7486,
+    "8": 2811
+  },
+  "EXIF_by_cultivar": {
+    "AR": {
+      "0": 60,
+      "1": 2079,
+      "3": 2,
+      "6": 801,
+      "8": 7
+    },
+    "HJ": {
+      "0": 6,
+      "1": 5770,
+      "2": 1,
+      "3": 53,
+      "4": 1,
+      "5": 1,
+      "6": 1893,
+      "8": 72
+    },
+    "HR": {
+      "0": 19,
+      "1": 707,
+      "3": 41,
+      "5": 4,
+      "6": 3960,
+      "8": 2594
+    },
+    "SG": {
+      "0": 25,
+      "1": 2314,
+      "3": 58,
+      "4": 2,
+      "5": 3,
+      "6": 832,
+      "8": 138
+    }
+  },
+  "raw_dimensions_differ_from_oriented": 5276,
+  "JSON_internal_versions": {
+    "v.1.0": 21443
+  },
+  "visual_QA_sample_count": 20,
+  "visual_selection": "every cultivar for observed common EXIF 0/1/6/8 tags plus one deterministic hash-selected record per other observed tag; all observed tags and cultivars represented",
+  "EXIF_identity_note": "Tag 1 includes the default used if EXIF orientation is absent. Tag 0 is undefined in EXIF and was retained in native coordinates only after exact JSON dimension and bbox checks. No rotation was guessed.",
+  "visual_review_status": "All 20 prespecified pairs were visually checked by the author, who found the same annotated apple retained in each crop; this is sample-based visual validation, not certification of all physical measurement pairings.",
+  "visual_images_excluded_from_public_distribution": true
+}

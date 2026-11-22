@@ -1,0 +1,10 @@
+{
+  "original_dependency_sha256": "962b50d481db17a49130df1b9007c892410c059194c1c844e932cacbbaff8407",
+  "selection_only_dependency_sha256": "d8994673ea9d703cf1128c71c0c543f62d9118ae7b6e6caaacd6c68893389d27",
+  "unchanged_AST_function_source": true,
+  "reference_pool_count": 6176,
+  "proxy_pool_count": 15267,
+  "all_selected_keys_images_fields_and_order_match": true,
+  "original_manifest_sha256": "73e124d0a41022078e18b341e5b75493812a56219332c8e55bac95b47cdf0acf",
+  "historical_label_values_are_not_final_corrected_targets": true
+}

@@ -1,0 +1,20 @@
+{
+  "train": {
+    "records": 15267,
+    "EXIF_transformed": 8117,
+    "historical_full_frame": 1004,
+    "both_EXIF_and_fullframe": 934,
+    "complete_reference_rows": 0,
+    "NIR_label_corrected": 0,
+    "NIR_label_corrected_among_complete_reference_rows": 0
+  },
+  "val": {
+    "records": 6176,
+    "EXIF_transformed": 2346,
+    "historical_full_frame": 803,
+    "both_EXIF_and_fullframe": 712,
+    "complete_reference_rows": 5862,
+    "NIR_label_corrected": 68,
+    "NIR_label_corrected_among_complete_reference_rows": 13
+  }
+}

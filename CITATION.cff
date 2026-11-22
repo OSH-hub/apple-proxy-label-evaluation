@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this code or these tables, please cite the article below."
+title: "apple-proxy-label-evaluation: analysis code and aggregate tables"
+type: software
+authors:
+  - family-names: Oh
+    given-names: Seunghong
+    orcid: "https://orcid.org/0009-0009-4684-902X"
+    affiliation: "ANCHOR Project Group, Konkuk University Glocal Campus"
+repository-code: "https://github.com/OSH-hub/apple-proxy-label-evaluation"
+license: MIT
+date-released: "2026-11-22"
+preferred-citation:
+  type: unpublished
+  title: "Target-Specific Evaluation of Uncertainty in Proxy-Supervised Image Regression: A Tree-Held-Out Study of RGB Apple Sugar Estimation"
+  authors:
+    - family-names: Oh
+      given-names: Seunghong
+  year: 2026
+  notes: "Manuscript submitted for publication."

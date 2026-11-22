@@ -1,0 +1,4 @@
+seed,selection_records_including_zero,selection_records_omitting_zero,selected_epoch_including_zero,selected_epoch_omitting_zero,replayed_epochs,eligible_selection_epochs,maximum_absolute_training_loss_difference,maximum_absolute_selection_mae_difference,checkpoint_tensors_compared,replayed_checkpoint_matches_original,omitted_checkpoint_matches_original
+0,1344,1343,39,39,40,35,0.0,0.0,320,True,True
+1,1344,1343,32,32,40,35,0.0,0.0,320,True,True
+2,1344,1343,28,28,40,35,0.0,0.0,320,True,True

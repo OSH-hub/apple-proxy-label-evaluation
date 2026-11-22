@@ -1,0 +1,13 @@
+{
+  "python": "3.11.15",
+  "torch": "2.11.0+cu128",
+  "torchvision": "0.26.0+cu128",
+  "timm": "1.0.27",
+  "numpy": "2.4.4",
+  "pandas": "3.0.3",
+  "scipy": "1.17.1",
+  "Pillow": "12.2.0",
+  "matplotlib": "3.11.0",
+  "CUDA_runtime": "12.8",
+  "GPU_name": "NVIDIA GeForce RTX 5090"
+}

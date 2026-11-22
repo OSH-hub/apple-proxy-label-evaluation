@@ -1,0 +1,5 @@
+# Farm-cluster sensitivity for the primary tree partition
+
+This addition was specified after earlier v2/v3 results were known but before any v4 model had been trained or evaluated. The primary tree-bootstrap analysis remains unchanged. Because different trees can share a farm, the corrected analysis additionally resamples the confirmed `pos` farm code for tree-test MAE, paired MAE contrasts and coverage. Both complete same-row and strict unique-NIR cohorts are included. These are labelled `farm_cluster_sensitivity`, while tree estimates remain `primary`.
+
+All farm and tree estimates are reported, regardless of direction or interval width. No fitting, model selection, cohort, split, seed, checkpoint or score definition changes. No result is selected because a preferred CI is narrower or excludes zero. Calibration multipliers remain fixed during coverage bootstrapping. Farm resampling describes dependence within the observed shared farms; it does not create independent external-farm validation or account for refitting/calibration-estimation variation. The earlier combination-test farm-primary/seven-combination-sensitivity plan remains unchanged.

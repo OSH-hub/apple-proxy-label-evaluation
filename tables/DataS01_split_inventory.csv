@@ -1,0 +1,17 @@
+scheme,partition,source,objects,trees,cultivar_farm_combinations,farms
+tree,cal,train,1508,23,16,10
+tree,cal,val,633,23,16,10
+tree,fit,train,8919,133,31,15
+tree,fit,val,3395,128,30,15
+tree,select,train,1643,23,15,11
+tree,select,val,643,23,15,11
+tree,test,train,3197,46,26,14
+tree,test,val,1191,45,25,14
+zone,cal,train,1294,19,14,11
+zone,cal,val,505,19,14,11
+zone,fit,train,10087,149,26,15
+zone,fit,val,3886,144,25,15
+zone,select,train,1344,19,14,12
+zone,select,val,483,18,13,12
+zone,test,train,2542,38,7,5
+zone,test,val,988,38,7,5

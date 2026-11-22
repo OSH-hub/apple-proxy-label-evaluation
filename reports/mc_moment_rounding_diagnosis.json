@@ -1,0 +1,444 @@
+{
+  "reason": "Compare exact per-column serialization expression, vectorized float32 and independent float64 reductions",
+  "entries": [
+    {
+      "scheme": "tree",
+      "seed": 0,
+      "partition": "cal",
+      "source": "train",
+      "shape": [
+        20,
+        1508
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 3.814697265625e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 2.527236938831834e-06,
+      "float64_sd_max_abs_difference": 2.2067790816926447e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "tree",
+      "seed": 0,
+      "partition": "cal",
+      "source": "val",
+      "shape": [
+        20,
+        633
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 3.814697267401357e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 2.5749206535863323e-06,
+      "float64_sd_max_abs_difference": 2.6473627234846475e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "tree",
+      "seed": 0,
+      "partition": "test",
+      "source": "train",
+      "shape": [
+        20,
+        3197
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 3.814697265625e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 3.480911253461727e-06,
+      "float64_sd_max_abs_difference": 2.679397331784017e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "tree",
+      "seed": 0,
+      "partition": "test",
+      "source": "val",
+      "shape": [
+        20,
+        1191
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 3.814697265625e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 3.480911255238084e-06,
+      "float64_sd_max_abs_difference": 3.0633420022851965e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "tree",
+      "seed": 1,
+      "partition": "cal",
+      "source": "train",
+      "shape": [
+        20,
+        1508
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 3.814697265625e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 3.337860107421875e-06,
+      "float64_sd_max_abs_difference": 2.441681273834817e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "tree",
+      "seed": 1,
+      "partition": "cal",
+      "source": "val",
+      "shape": [
+        20,
+        633
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 3.814697265625e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 2.6226043701171875e-06,
+      "float64_sd_max_abs_difference": 2.6586305712505975e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "tree",
+      "seed": 1,
+      "partition": "test",
+      "source": "train",
+      "shape": [
+        20,
+        3197
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 3.814697265625e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 3.0994415265439557e-06,
+      "float64_sd_max_abs_difference": 2.289226053164839e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "tree",
+      "seed": 1,
+      "partition": "test",
+      "source": "val",
+      "shape": [
+        20,
+        1191
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 3.814697265625e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 2.908706667525962e-06,
+      "float64_sd_max_abs_difference": 2.3125144688052046e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "tree",
+      "seed": 2,
+      "partition": "cal",
+      "source": "train",
+      "shape": [
+        20,
+        1508
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 2.86102294921875e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 2.0980834953832073e-06,
+      "float64_sd_max_abs_difference": 2.7376832190117995e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "tree",
+      "seed": 2,
+      "partition": "cal",
+      "source": "val",
+      "shape": [
+        20,
+        633
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 3.814697267401357e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 3.337860109198232e-06,
+      "float64_sd_max_abs_difference": 2.5716657969798717e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "tree",
+      "seed": 2,
+      "partition": "test",
+      "source": "train",
+      "shape": [
+        20,
+        3197
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 3.814697265625e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 2.717971801402541e-06,
+      "float64_sd_max_abs_difference": 2.5838743200612413e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "tree",
+      "seed": 2,
+      "partition": "test",
+      "source": "val",
+      "shape": [
+        20,
+        1191
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 3.814697265625e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 2.86102294921875e-06,
+      "float64_sd_max_abs_difference": 2.606442872643555e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "zone",
+      "seed": 0,
+      "partition": "cal",
+      "source": "train",
+      "shape": [
+        20,
+        1294
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 2.861022950995107e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 2.2411346414230593e-06,
+      "float64_sd_max_abs_difference": 2.011785321665016e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "zone",
+      "seed": 0,
+      "partition": "cal",
+      "source": "val",
+      "shape": [
+        20,
+        505
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 3.814697265625e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 2.5272369406081907e-06,
+      "float64_sd_max_abs_difference": 2.289720743564594e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "zone",
+      "seed": 0,
+      "partition": "test",
+      "source": "train",
+      "shape": [
+        20,
+        2542
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 3.814697265625e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 2.861022950995107e-06,
+      "float64_sd_max_abs_difference": 2.0332319744520433e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "zone",
+      "seed": 0,
+      "partition": "test",
+      "source": "val",
+      "shape": [
+        20,
+        988
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 3.814697265625e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 2.9563903805041036e-06,
+      "float64_sd_max_abs_difference": 2.6422134702386302e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "zone",
+      "seed": 1,
+      "partition": "cal",
+      "source": "train",
+      "shape": [
+        20,
+        1294
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 3.814697267401357e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 3.2901763908910198e-06,
+      "float64_sd_max_abs_difference": 1.9950225915721376e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "zone",
+      "seed": 1,
+      "partition": "cal",
+      "source": "val",
+      "shape": [
+        20,
+        505
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 3.814697267401357e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 2.6226043701171875e-06,
+      "float64_sd_max_abs_difference": 2.6229604210836754e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "zone",
+      "seed": 1,
+      "partition": "test",
+      "source": "train",
+      "shape": [
+        20,
+        2542
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 3.814697265625e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 2.527236937055477e-06,
+      "float64_sd_max_abs_difference": 2.657719061494035e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "zone",
+      "seed": 1,
+      "partition": "test",
+      "source": "val",
+      "shape": [
+        20,
+        988
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 3.814697265625e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 2.9087066657496052e-06,
+      "float64_sd_max_abs_difference": 2.3996765075029458e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "zone",
+      "seed": 2,
+      "partition": "cal",
+      "source": "train",
+      "shape": [
+        20,
+        1294
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 3.814697267401357e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 2.384185791015625e-06,
+      "float64_sd_max_abs_difference": 1.8906393839390745e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "zone",
+      "seed": 2,
+      "partition": "cal",
+      "source": "val",
+      "shape": [
+        20,
+        505
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 3.814697265625e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 2.2888183597302714e-06,
+      "float64_sd_max_abs_difference": 2.247898106544355e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "zone",
+      "seed": 2,
+      "partition": "test",
+      "source": "train",
+      "shape": [
+        20,
+        2542
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 3.814697267401357e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 2.86102294921875e-06,
+      "float64_sd_max_abs_difference": 1.896551893310061e-08,
+      "finite_and_nonzero": true
+    },
+    {
+      "scheme": "zone",
+      "seed": 2,
+      "partition": "test",
+      "source": "val",
+      "shape": [
+        20,
+        988
+      ],
+      "dtype": "float32",
+      "key_order_match": true,
+      "axis32_mean_max_abs_difference": 3.814697265625e-06,
+      "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+      "column32_sd_max_abs_difference": 9.71445146547012e-17,
+      "float64_mean_max_abs_difference": 2.9087066657496052e-06,
+      "float64_sd_max_abs_difference": 2.3944975113820988e-08,
+      "finite_and_nonzero": true
+    }
+  ],
+  "maxima": {
+    "axis32_mean_max_abs_difference": 3.814697267401357e-06,
+    "column32_mean_max_abs_difference": 1.7763568394002505e-15,
+    "column32_sd_max_abs_difference": 9.71445146547012e-17,
+    "float64_mean_max_abs_difference": 3.480911255238084e-06,
+    "float64_sd_max_abs_difference": 3.0633420022851965e-08
+  }
+}

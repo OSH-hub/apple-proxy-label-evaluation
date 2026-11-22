@@ -1,0 +1,18 @@
+{
+  "python": "3.11.15",
+  "numpy": "2.4.4",
+  "pandas": "3.0.3",
+  "accuracy_bootstrap": 5000,
+  "rho_bootstrap": 1000,
+  "random_seed": 20261026,
+  "elapsed_seconds": 20.448065042495728,
+  "completed_schemes": [
+    "tree",
+    "zone"
+  ],
+  "historical_LOCO_included": false,
+  "historical_LOCO_exclusion_reason": "Not rerun on corrected source/crop pipeline",
+  "zone_primary_cluster": "farm code; five test farms already shared with development",
+  "tree_additional_sensitivity_cluster": "farm code, complete accuracy/paired/coverage outputs",
+  "analysis_script_sha256": "6bd98f295dc5809f7e862ea7d269341d06f36ebb47aa657e6732b63a4591d0bf"
+}

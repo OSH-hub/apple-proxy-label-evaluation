@@ -1,0 +1,58 @@
+[
+  {
+    "scheme": "tree",
+    "cohort": "same_row_complete",
+    "cluster_unit": "pos",
+    "anonymous_MAE_and_paired_CI_reconstruction": "pass",
+    "tolerance": 1e-12
+  },
+  {
+    "scheme": "tree",
+    "cohort": "same_row_complete",
+    "cluster_unit": "tree_key",
+    "anonymous_MAE_and_paired_CI_reconstruction": "pass",
+    "tolerance": 1e-12
+  },
+  {
+    "scheme": "tree",
+    "cohort": "strict_unique_NIR",
+    "cluster_unit": "pos",
+    "anonymous_MAE_and_paired_CI_reconstruction": "pass",
+    "tolerance": 1e-12
+  },
+  {
+    "scheme": "tree",
+    "cohort": "strict_unique_NIR",
+    "cluster_unit": "tree_key",
+    "anonymous_MAE_and_paired_CI_reconstruction": "pass",
+    "tolerance": 1e-12
+  },
+  {
+    "scheme": "zone",
+    "cohort": "same_row_complete",
+    "cluster_unit": "pos",
+    "anonymous_MAE_and_paired_CI_reconstruction": "pass",
+    "tolerance": 1e-12
+  },
+  {
+    "scheme": "zone",
+    "cohort": "same_row_complete",
+    "cluster_unit": "zone_key",
+    "anonymous_MAE_and_paired_CI_reconstruction": "pass",
+    "tolerance": 1e-12
+  },
+  {
+    "scheme": "zone",
+    "cohort": "strict_unique_NIR",
+    "cluster_unit": "pos",
+    "anonymous_MAE_and_paired_CI_reconstruction": "pass",
+    "tolerance": 1e-12
+  },
+  {
+    "scheme": "zone",
+    "cohort": "strict_unique_NIR",
+    "cluster_unit": "zone_key",
+    "anonymous_MAE_and_paired_CI_reconstruction": "pass",
+    "tolerance": 1e-12
+  }
+]
