@@ -110,7 +110,7 @@ for cohort in ['same_row_complete','strict_unique_NIR']:
     for cultivar in ['ALL']+sorted(f.kind.unique()):
         q=f if cultivar=='ALL' else f[f.kind==cultivar];err=q.nir-q.sugar
         labels.append({'cohort':cohort,'cultivar':cultivar,'n':len(q),'trees':q.tree_key.nunique(),'NIR_bias':err.mean(),'NIR_MAE':np.abs(err).mean(),'pearson_r':np.corrcoef(q.nir,q.sugar)[0,1],'large_errors':int((np.abs(err)>2).sum())})
-for rows,name in [(inventory,'DataS01_split_inventory.csv'),(accuracy,'DataS02_accuracy.csv'),(paired,'DataS05_paired_accuracy.csv'),(uncertainty,'DataS03_uncertainty_three_targets.csv'),(coverage,'DataS04_interval_coverage.csv'),(seeds,'DataS06_seed_metrics.csv'),(labels,'DataS07_full_reference_label_audit.csv'),(curves,'DataS08_capture_curves.csv'),(clusters,'DataS09_cluster_error_sums.csv'),(within,'DataS10_within_cultivar_scores.csv'),(overlap,'DataS11_farm_overlap.csv')]:table(rows,name)
+for rows,name in [(inventory,'split_inventory.csv'),(accuracy,'accuracy.csv'),(paired,'paired_accuracy.csv'),(uncertainty,'uncertainty_three_targets.csv'),(coverage,'interval_coverage.csv'),(seeds,'seed_metrics.csv'),(labels,'reference_pool_label_audit.csv'),(curves,'capture_curves.csv'),(clusters,'cluster_error_sums.csv'),(within,'within_cultivar_scores.csv'),(overlap,'farm_overlap.csv')]:table(rows,name)
 save(O/'private/test_predictions_internal.csv',pd.concat(prediction_sets).to_csv(index=False))
 # Independently reconstruct aggregate MAE and paired bootstrap from anonymous sums.
 checks=[];cs=pd.DataFrame(clusters);acc=pd.DataFrame(accuracy);pa=pd.DataFrame(paired)

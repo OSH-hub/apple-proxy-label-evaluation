@@ -11,9 +11,9 @@ import pandas as pd
 
 ap=argparse.ArgumentParser();ap.add_argument('--root',type=Path,default=Path(__file__).resolve().parents[1]);args=ap.parse_args()
 root=args.root
-cluster=pd.read_csv(root/'tables/DataS09_cluster_error_sums.csv')
-acc=pd.read_csv(root/'tables/DataS02_accuracy.csv')
-paired=pd.read_csv(root/'tables/DataS05_paired_accuracy.csv')
+cluster=pd.read_csv(root/'tables/cluster_error_sums.csv')
+acc=pd.read_csv(root/'tables/accuracy.csv')
+paired=pd.read_csv(root/'tables/paired_accuracy.csv')
 keys=['scheme','cohort','cluster_unit','inference_role'];checks=[]
 def select(frame,values):
     for k,v in zip(keys,values):frame=frame[frame[k]==v]

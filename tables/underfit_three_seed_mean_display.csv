@@ -1,0 +1,7 @@
+Setting,Fitting NIR MAE,Selection NIR MAE,Proxy-test NIR MAE,Reference MAE,Reference r,Paired difference (95% interval)
+Cultivar mean,1.492,1.541,1.379,1.226,0.274,—
+Primary (prespecified),1.332,1.426,1.286,1.407,0.274,0.181 (0.049 to 0.314)
+Learning rate × 10,1.086,1.332,1.211,1.321,0.326,0.095 (−0.020 to 0.206)
+120 epochs,1.236,1.379,1.242,1.384,0.309,0.158 (0.028 to 0.283)
+448-pixel input,1.310,1.396,1.266,1.378,0.289,0.152 (0.028 to 0.278)
+"Learning rate × 10, 448-pixel input",1.174,1.334,1.211,1.293,0.327,0.068 (−0.045 to 0.175)

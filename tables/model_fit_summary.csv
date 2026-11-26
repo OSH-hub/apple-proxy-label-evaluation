@@ -1,0 +1,7 @@
+Scheme,Seed,Selected epoch,Selection NIR MAE,Reference MAE,Mean MC SD,Seconds
+tree,0,37,1.434,1.432,0.137,504.0
+tree,1,34,1.428,1.387,0.141,503.1
+tree,2,34,1.427,1.418,0.137,516.1
+combination,0,39,1.293,1.536,0.140,518.7
+combination,1,32,1.293,1.469,0.143,504.9
+combination,2,28,1.284,1.524,0.140,514.5

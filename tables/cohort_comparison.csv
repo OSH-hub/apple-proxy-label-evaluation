@@ -1,0 +1,5 @@
+Scheme,Cohort,Test n,Ref. cal n,RGB MAE,Cultivar MAE,Paired difference (95% interval),Coverage,Mean width
+tree,same_row_complete,1191,633,1.407,1.226,0.181 (0.044 to 0.312),93.3%,6.601
+tree,strict_unique_NIR,1079,587,1.402,1.195,0.207 (0.065 to 0.347),93.2%,6.530
+combination,same_row_complete,988,505,1.504,1.340,0.164 (−0.161 to 0.533),87.2%,5.744
+combination,strict_unique_NIR,872,450,1.489,1.265,0.223 (−0.058 to 0.629),90.4%,6.101

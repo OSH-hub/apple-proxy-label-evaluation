@@ -1,4 +1,4 @@
-"""Recalculate aggregate Data S16 from authorized, private replay evidence.
+"""Recalculate aggregate tables/checkpoint_selection_sensitivity.csv from authorized, private replay evidence.
 
 Only aggregate CSV/JSON outputs are written. No archive extraction, model fitting,
 source-record export or checkpoint-tensor loading is performed. Tensor agreement
