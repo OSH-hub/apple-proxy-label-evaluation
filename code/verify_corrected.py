@@ -1,4 +1,3 @@
-"""Independent file/hash, split, checkpoint-selection and saved-MC checks."""
 from pathlib import Path
 import csv,json,hashlib,collections,io,argparse,math,zipfile
 import numpy as np,pandas as pd
@@ -80,11 +79,6 @@ for scheme in ['tree','zone']:
             arr=np.load(run/f'mc_{partition}_{source}.npz')
             assert arr['objkeys'].tolist()==frame.objkey.tolist()
             q=arr['predictions'];assert q.shape==(20,len(frame)) and np.isfinite(q).all() and (q.std(0)>0).all()
-            # The writer reduces each noncontiguous 20-pass column separately.
-            # A float32 axis=0 reduction uses a different summation order and
-            # differed by 3.8e-6 despite exact saved-column agreement. Reproduce
-            # the serialization expression strictly, then check float64 means
-            # against the standard gamma_n float32 summation error bound.
             column_mean=np.array([float(q[:,i].mean()) for i in range(q.shape[1])])
             column_sd=np.array([float(q[:,i].std()) for i in range(q.shape[1])])
             assert np.max(np.abs(column_mean-frame.mc_mean.to_numpy()))<1e-12

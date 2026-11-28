@@ -1,8 +1,3 @@
-"""Reproduce tables/cohort_label_date_summary.csv from an authorized tree-scheme prediction CSV.
-
-No individual identifiers are written to the output. Dates are retained-key
-fields, not independently verified measurement timestamps. Standard library only.
-"""
 import argparse,csv,statistics
 from datetime import datetime
 from pathlib import Path

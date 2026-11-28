@@ -1,4 +1,3 @@
-"""Publication figures from aggregate CSVs only; no raw records or manuscript writes."""
 from pathlib import Path
 import numpy as np,pandas as pd
 import matplotlib

@@ -1,8 +1,3 @@
-"""Historical representative selection dependency only; no crop implementation.
-Set MANIFEST to the authorized original manifest before calling select_items.
-The historical pool classification is preserved; its labels are NOT final targets.
-The corrected worker replaces labels from the chosen source row.
-"""
 import csv, collections
 MANIFEST="SET_AUTHORIZED_ORIGINAL_MANIFEST_PATH"
 

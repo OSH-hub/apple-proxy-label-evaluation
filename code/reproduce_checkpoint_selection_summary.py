@@ -1,10 +1,4 @@
-"""Recalculate aggregate tables/checkpoint_selection_sensitivity.csv from authorized, private replay evidence.
-
-Only aggregate CSV/JSON outputs are written. No archive extraction, model fitting,
-source-record export or checkpoint-tensor loading is performed. Tensor agreement
-fields are supported by archived comparison logs, not rechecked tensors here.
-Requires Python and NumPy; the original calculation used NumPy 2.4.4.
-"""
+"""Recalculate aggregate tables/checkpoint_selection_sensitivity.csv from authorized, private replay evidence."""
 import argparse
 import csv
 import io
@@ -70,7 +64,6 @@ def calculate(archive_path, histories_dir):
                     "Each seed must have exactly 40 epoch prediction arrays.")
             full_values, omitted_values, loss_differences, mae_differences = [], [], [], []
             for epoch in range(40):
-                # Reading only required members avoids extracting private log/config content.
                 with np.load(io.BytesIO(archive.read(prefix + f"selection_epoch_{epoch:02d}.npz")),
                              allow_pickle=False) as arrays:
                     pred, labels, keys = arrays["pred"], arrays["nir"], arrays["objkeys"]
@@ -99,7 +92,6 @@ def calculate(archive_path, histories_dir):
                 mae_differences.append(abs(full - old["selection_nir_mae"]))
                 array_count += 1
                 prediction_count += len(labels)
-            # The original trainer accepts epochs 6--40 and retains the first minimum.
             full_best = min(range(5, 40), key=full_values.__getitem__)
             omitted_best = min(range(5, 40), key=omitted_values.__getitem__)
             original_best = min(range(5, 40), key=lambda i: original[i]["selection_nir_mae"])
@@ -178,7 +170,6 @@ def main():
             calculated = list(csv.DictReader(io.StringIO(buffer.getvalue())))
             require(expected == calculated, "Calculated aggregate rows differ from the expected table.")
             audit["published_table_matches"] = True
-        # Exclusive creation protects both the supplied evidence and existing outputs.
         with args.output.open("x", encoding="utf-8", newline="") as stream:
             stream.write(buffer.getvalue())
         with args.audit_output.open("x", encoding="utf-8", newline="") as stream:
@@ -192,7 +183,6 @@ def main():
     except InvalidEvidence as error:
         print("Validation failed: " + str(error), file=sys.stderr)
     except (OSError, KeyError, ValueError, TypeError, zipfile.BadZipFile):
-        # Do not echo private input paths, record identities or archive contents.
         print("Input or output failure; check permissions and the documented evidence format.", file=sys.stderr)
     return 1
 

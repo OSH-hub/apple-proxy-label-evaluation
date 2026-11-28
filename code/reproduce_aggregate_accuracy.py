@@ -1,9 +1,3 @@
-"""Recompute published pooled MAE and paired intervals from anonymous cluster sums.
-
-This does not require, release, or reconstruct individual source labels. It cannot
-reproduce ranks, calibration, model fitting or biological measurement pairing.
-Run with --root pointing to the directory containing tables/.
-"""
 from pathlib import Path
 import argparse, json
 import numpy as np

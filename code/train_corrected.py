@@ -1,4 +1,3 @@
-"""Model fitting on regenerated crops; preserved group assignments and hyperparameters."""
 import os
 os.environ.setdefault('HF_HUB_OFFLINE','1')
 os.environ.setdefault('OMP_NUM_THREADS','2')

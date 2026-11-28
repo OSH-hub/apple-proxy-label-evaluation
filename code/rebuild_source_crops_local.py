@@ -1,8 +1,3 @@
-"""Rebuild original-row linkage and bbox crops. Write only new artifacts.
-
-Run on the licensed source host. Individual linkage/hashes stay private.
-No old crops, labels, manifests or training outputs are modified.
-"""
 from pathlib import Path
 import csv, json, hashlib, io, time, threading, collections, zipfile, math, traceback, os, struct, zlib, binascii
 from concurrent.futures import ThreadPoolExecutor
@@ -148,7 +143,6 @@ for source in ['train','val']:
     subset=[r for r in records if r['source']==source and (source=='train' or r['complete_original_row'])]
     if source=='train':assert len(subset)==15267 and all(r['sugar'] is None for r in subset)
     csvwrite(DEST/f'{source}_meta.csv',subset)
-# Freeze the existing partitions; exclusions cannot alter group allocation.
 for scheme in ['tree','zone']:
     p=BASE/f'submission_20261026_v2/P1/splits/{scheme}_manifest.csv'
     original={r['objkey']:r for r in csv.DictReader(p.open())}

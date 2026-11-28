@@ -1,9 +1,3 @@
-"""Aggregate analysis of the under-fitting checks (see underfit_plan.md).
-
-Usage: python analyze_underfit.py RUNS_DIR --out NEW_DIR
-RUNS_DIR holds the folders written by underfit_check.py (d2, d3, <SETTING>_seed<S>). Per-record prediction
-files are read but only aggregate tables are written.
-"""
 from pathlib import Path
 import argparse, csv, json
 import numpy as np
@@ -35,7 +29,7 @@ def main():
     meta = {s: dict(kind=np.array([base[s][k][0] for k in keys[s]]), tree=np.array([base[s][k][1] for k in keys[s]]),
                     nir=np.array([base[s][k][2] for k in keys[s]]), sugar=np.array([base[s][k][3] for k in keys[s]])) for s in SETS}
     assert [len(keys[s]) for s in SETS] == [8919, 1643, 3197, 1191]
-    cm = {c: float(meta['fit']['nir'][meta['fit']['kind'] == c].mean()) for c in CULTIVARS}          # cultivar NIR mean of proxy fitting records
+    cm = {c: float(meta['fit']['nir'][meta['fit']['kind'] == c].mean()) for c in CULTIVARS}
     cmean = {s: np.array([cm[c] for c in meta[s]['kind']]) for s in SETS}
     rows_seed, rows_ens, rows_curve = [], [], []
     ref = meta['reference_test']; trees = np.unique(ref['tree']); tree_idx = {t: np.where(ref['tree'] == t)[0] for t in trees}

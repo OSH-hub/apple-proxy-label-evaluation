@@ -1,11 +1,3 @@
-"""Under-fitting checks for the proxy-trained RGB model. See underfit_plan.md.
-
-Usage:
-  CUDA_VISIBLE_DEVICES=<n> python underfit_check.py --p1 P1_DIR --out OUT_DIR --task TASK [--seed S] [--plan underfit_plan.md]
-TASK: d2 (primary checkpoints on fitting records), d3 (capacity test), LR10, EP120, RES448, LR10_RES448.
-P1_DIR is the folder of the primary analysis (splits/tree_manifest.csv, runs/tree_seed*/checkpoint.pt, crops).
-Outputs hold aggregate metrics and per-record predictions keyed by the manifest; predictions are private.
-"""
 import os
 os.environ.setdefault('HF_HUB_OFFLINE', '1'); os.environ.setdefault('OMP_NUM_THREADS', '2'); os.environ.setdefault('MKL_NUM_THREADS', '2')
 from pathlib import Path
@@ -42,8 +34,6 @@ class Net(nn.Module):
 
 
 def loader(rows, res, train=False, aug=None):
-    # Prediction loaders are created once per epoch; their workers must end with the loader (persistent workers
-    # accumulated open files over 120 epochs). The training loader is created once per run and stays persistent.
     return DataLoader(CropDS(rows, res, train if aug is None else aug), batch_size=128, shuffle=train, num_workers=4, pin_memory=True, drop_last=train and len(rows) >= 128, persistent_workers=train)
 
 
@@ -91,7 +81,7 @@ def train(sets, cfg, seed, out, subset=None, drop=.2, aug=True):
     random.seed(seed); np.random.seed(seed); torch.manual_seed(seed); torch.cuda.manual_seed_all(seed)
     torch.backends.cudnn.benchmark = False; torch.backends.cudnn.deterministic = True
     tr = sets['fit'] if subset is None else sets['fit'][:subset]; ho = sets['select']; res = cfg['res']; E = cfg['epochs']
-    ys = nir(sets['fit']); mean, scale = float(ys.mean()), float(ys.std())          # target scaling from all proxy fitting records, as in the primary runs
+    ys = nir(sets['fit']); mean, scale = float(ys.mean()), float(ys.std())
     model = Net(drop).cuda()
     opt = torch.optim.AdamW([{'params': model.backbone.parameters(), 'lr': cfg['lr'][0]}, {'params': model.head.parameters(), 'lr': cfg['lr'][1]}], weight_decay=1e-4)
     sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, E); scaler = torch.amp.GradScaler(); dl = loader(tr, res, True, aug); best = float('inf'); history = []; sel = None
@@ -126,7 +116,7 @@ def main():
             cfgp = json.loads((p1 / f'runs/tree_seed{s}/run_config.json').read_text()); assert abs(cfgp['ymean'] - mean) < 1e-9 and abs(cfgp['ystd'] - scale) < 1e-9
             model = Net().cuda(); model.load_state_dict(torch.load(p1 / f'runs/tree_seed{s}/checkpoint.pt', weights_only=True))
             preds = {k: predict(model, v, 224, mean, scale) for k, v in sets.items()}; save_preds(out / f'preds_seed{s}.csv', sets, preds); res[f'seed{s}'] = metrics(sets, preds)
-            old = {r['objkey']: float(r['pred']) for r in csv.DictReader((p1 / f'runs/tree_seed{s}/preds_test_val.csv').open())}       # agreement with the saved primary predictions
+            old = {r['objkey']: float(r['pred']) for r in csv.DictReader((p1 / f'runs/tree_seed{s}/preds_test_val.csv').open())}
             diff = max(abs(old[r['objkey']] - p) for r, p in zip(sets['reference_test'], preds['reference_test'])); res[f'seed{s}']['max_abs_difference_from_saved_primary_predictions'] = diff
         info['results'] = res
     elif a.task == 'd3':
@@ -136,7 +126,7 @@ def main():
     else:
         cfg = SETTINGS[a.task]; model, mean, scale, sel, hist = train(sets, cfg, a.seed, out)
         preds = {k: predict(model, v, cfg['res'], mean, scale) for k, v in sets.items()}; save_preds(out / 'preds.csv', sets, preds)
-        info.update(setting=cfg, selected=sel, results=metrics(sets, preds)); (out / 'checkpoint.pt').unlink()        # weights are not needed after prediction
+        info.update(setting=cfg, selected=sel, results=metrics(sets, preds)); (out / 'checkpoint.pt').unlink()
     info['total_seconds'] = time.time() - t0; (out / 'completed.json').write_text(json.dumps(info, indent=2)); print('COMPLETED', tag, json.dumps(info.get('results'))[:600], flush=True)
 
 

@@ -1,4 +1,3 @@
-"""Aggregate regenerated crops/models without publishing row-level source data."""
 import os
 os.environ.setdefault('OPENBLAS_NUM_THREADS','2')
 from pathlib import Path
@@ -112,7 +111,6 @@ for cohort in ['same_row_complete','strict_unique_NIR']:
         labels.append({'cohort':cohort,'cultivar':cultivar,'n':len(q),'trees':q.tree_key.nunique(),'NIR_bias':err.mean(),'NIR_MAE':np.abs(err).mean(),'pearson_r':np.corrcoef(q.nir,q.sugar)[0,1],'large_errors':int((np.abs(err)>2).sum())})
 for rows,name in [(inventory,'split_inventory.csv'),(accuracy,'accuracy.csv'),(paired,'paired_accuracy.csv'),(uncertainty,'uncertainty_three_targets.csv'),(coverage,'interval_coverage.csv'),(seeds,'seed_metrics.csv'),(labels,'reference_pool_label_audit.csv'),(curves,'capture_curves.csv'),(clusters,'cluster_error_sums.csv'),(within,'within_cultivar_scores.csv'),(overlap,'farm_overlap.csv')]:table(rows,name)
 save(O/'private/test_predictions_internal.csv',pd.concat(prediction_sets).to_csv(index=False))
-# Independently reconstruct aggregate MAE and paired bootstrap from anonymous sums.
 checks=[];cs=pd.DataFrame(clusters);acc=pd.DataFrame(accuracy);pa=pd.DataFrame(paired)
 for (scheme,cohort,unit),g in cs.groupby(['scheme','cohort','cluster_unit']):
     a=acc[(acc.scheme==scheme)&(acc.cohort==cohort)&(acc.cluster_unit==unit)&(acc.cultivar=='ALL')]
